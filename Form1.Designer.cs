@@ -34,11 +34,22 @@ namespace snow
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::snow.Properties.Resources.background;
+            this.BackgroundImage = global::snow.Properties.Resources.backgroundImg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(806, 467);
+
             this.Name = "Form1";
             this.Text = "Деревня с падающими снежинками";
+
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+            this.TopMost = true;
+
             this.ResumeLayout(false);
         }
 
