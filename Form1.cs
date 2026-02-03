@@ -12,7 +12,6 @@ namespace snow
         private SnowFlake[] snowflakes;
         private Bitmap snowflakeImage;
         private System.Windows.Forms.Timer timer;
-
         private static  Random rand = new Random();
 
         private const int MinSpeed = 3;
@@ -112,7 +111,7 @@ namespace snow
             using (var g = Graphics.FromImage(buffer))
             {
 
-                g.DrawImage(Properties.Resources.backgroundImg, 0, 0, ClientRectangle.Width, ClientRectangle.Height);
+                g.DrawImage(Properties.Resources.backgroundImg, 0, 0, ClientRectangle.Width, ClientRectangle.Height); // картинка растягиватеся, чтобы полосы исчезли
                 foreach (var flake in snowflakes)
                 {
                     if (snowflakeImage != null)
