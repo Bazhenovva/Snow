@@ -70,18 +70,11 @@ namespace snow
         private void ResetSnowFlake(int index)
         {
             //размер снежинки
-            int randomSize = rand.Next(MinRandSize, MaxRandSize);
+            var randomSize = rand.Next(MinRandSize, MaxRandSize);
 
-            int speed;
-            if (randomSize <= MediumRandSize)
-            {
-                speed = MinSpeed;
-            }
-            else
-            {
-                speed = MaxSpeed;
-            }
-            float scale = (float)randomSize / snowflakeImage.Width;
+            var speed = randomSize <= MediumRandSize ? MinSpeed : MaxSpeed;
+
+            var scale = (float)randomSize / snowflakeImage.Width;
 
             snowflakes[index].X = rand.Next(ClientRectangle.Width);
             snowflakes[index].Y = rand.Next(LessPositionY, MorePositionY); // появляется выше экрана
@@ -115,8 +108,8 @@ namespace snow
                 {
                     if (snowflakeImage != null)
                     {
-                        int drawWidth = (int)(snowflakeImage.Width * flake.Scale);
-                        int drawHeight = (int)(snowflakeImage.Height * flake.Scale);
+                        var drawWidth = (int)(snowflakeImage.Width * flake.Scale);
+                        var drawHeight = (int)(snowflakeImage.Height * flake.Scale);
                         g.DrawImage(snowflakeImage, flake.X, flake.Y, drawWidth, drawHeight);
                     }
                 }
