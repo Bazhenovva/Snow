@@ -46,8 +46,7 @@ namespace snow
             timer.Tick += Timer_Tick;
 
         }
-
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             InitializeSnowflakes();
             timer.Start();

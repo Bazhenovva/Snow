@@ -41,7 +41,7 @@ namespace snow
             this.Name = "Form1";
             this.Text = "Деревня с падающими снежинками";
 
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
 
